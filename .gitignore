@@ -361,3 +361,23 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Assets/Scenes
+/Assets/Script/Alarm.cs
+/Assets/SampleScenes
+/Assets/Script
+/Assets/Samples
+/Assets
+/Library
+/ProjectSettings
+/Temp
+/UserSettings
+/.vsconfig
+/4.sln
+/Assembly-CSharp-Editor-firstpass.csproj
+/Unity.2D.PixelPerfect.Samples.Editor.csproj
+/Unity.2D.PixelPerfect.Samples.csproj
+/Unity.2D.Animation.Samples.Runtime.csproj
+/Unity.2D.Animation.Samples.Editor.csproj
+/Unity.2D.Animation.Samples.Dependency.csproj
+/Assembly-CSharp.csproj
+/Assembly-CSharp-firstpass.csproj

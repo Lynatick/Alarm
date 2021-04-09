@@ -9,7 +9,7 @@ public class Alarm : MonoBehaviour
     [SerializeField] private UnityEvent _startEvent;
     [SerializeField] private UnityEvent _stopEvent;
     private float endVolume;
-    private bool startClip, stopClip;
+    private bool upVolume, downVolume;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,22 +19,23 @@ public class Alarm : MonoBehaviour
             AudioListener.volume = 0;
             AudioListener.pause = false;
             endVolume = 1;
-            startClip = true;
-            stopClip = false;
+            upVolume = true;
+            downVolume = false;
         }
     }
 
     private void Update()
     {
-        if (startClip || stopClip)
+        if (upVolume || downVolume)
         {
             AudioListener.volume = Mathf.MoveTowards(AudioListener.volume, endVolume, Time.deltaTime * 0.1F);
             if (AudioListener.volume == endVolume)
             {
-                startClip = false;
-                stopClip = false;
+                upVolume = false;
+                downVolume = false;
             }
-            if (AudioListener.volume == 0) AudioListener.pause = true;
+            if (AudioListener.volume == 0) 
+                AudioListener.pause = true;
         }
     }
 
@@ -45,8 +46,8 @@ public class Alarm : MonoBehaviour
         {
             _stopEvent.Invoke();
             endVolume = 0;
-            startClip = false;
-            stopClip = true;
+            upVolume = false;
+            downVolume = true;
         }
     }
 
